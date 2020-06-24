@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM </title>
+    <style>
+        body {
+            background-color: rgb(75, 133, 241);
+            font: normal 18pt Arial;
+        }
+        span{
+            text-decoration: underline overline dotted red;
+            color: violet;
+        }
+        h1 {
+            color: rgb(white);
+            }
+    </style>
+
+</head>
+
+<body>
+    <h1>Iniciando Estudos com <span>D O M</span></h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong> DOM </strong> em JavaScript</p>
+
+    <!--  <div id ="msg">Clique aqui</div> -->
+    <!--  <div class ="msg">Clique aqui</div> -->
+    <!-- <div name = "msg">Clique aqui</div>-->
+    <div id="msg">   Clique aqui!    </div> 
+
+    <script>
+        window.document.writeln("Hello Word!")
+        window.document.writeln(document.URL)
+        /* por marcação */
+        var p1 = window.document.getElementsByTagName("p")[0]
+        var p2 = window.document.getElementsByTagName("p")[1]
+        p2.style.color ='violet'
+
+        document.writeln("Está escrito assim:   " + p1.innerText + " " + p2.innerText)
+  
+        var corpo = window.document.body
+
+        /* por id ou class 
+        
+        var d = window.document.getElementsByClassName('msg')[0]
+        d.style.background = 'blue'
+        d.innerText = 'Estou aguardando'  */
+
+        /* Agora por name 
+        
+        var d = window.document.getElementsByName('msg')[0]
+        d.style.background = 'blue'
+        d.innerText = 'Estou aguardando Nome'
+        
+        */
+
+        /* div com id
+        var d = window.document.querySelector('div#msg')
+        d.style.background = 'blue'
+        d.style.color = 'black'
+        d.innerText = 'Estou aguardando id com rashtag'
+        */
+
+        var d = window.document.querySelector('div.msg')
+        d.style.background = 'blue'
+        d.style.color = 'black'
+        d.innerText = 'Estou aguardando -> id com pontinho da class'
+
+        var h=window.document.getElementsByTagName('h1')[0]
+        h.style.color = 'yellow'    
+        window.document.getElementById('msg').innerText = 'Carai'
+
+    </script>
+</body>
+
+</html>

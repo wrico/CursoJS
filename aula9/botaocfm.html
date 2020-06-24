@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOM - Document Object Model</title>
+    <style>
+        header#prim {
+            font-size: 20pt;
+            color: blue;
+            text-align: center;
+            border-bottom: solid black;
+        }
+
+        div#res {
+            padding: 10px;
+            margin-left: 0px;
+        }
+
+        button#btn:hover {
+            background-color: blue;
+            color: white;
+        }
+        
+    </style>
+</head>
+
+<header id="prim">
+
+    <p> Início do Estudo Java Script</p>
+    <p> DOM - Document Object Model</p>
+    <p> If Then Else</p>
+    <p id="parag"> Botão e Resultado </p>
+
+</header>
+
+<body>
+
+    <div id="res"> Resultado </div>
+
+    <p>Clique no botão para exibir a caixa de confirmação.</p>
+
+    <button id="btn" onclick="funcao1()">Clique aqui</button>
+
+    <p id="demo"></p>
+
+    <script>
+        function funcao1() {
+            var x;
+            var r = confirm("Escolha um valor!");
+            if (r == true) {
+                x = "você pressionou OK!";
+                var d = window.document.querySelector('p#parag');
+                d.style.background = 'blue';
+                d.style.color = 'white';
+            }
+            else {
+                x = "Você pressionou Cancelar!";
+                var d = window.document.querySelector('p#parag');
+                d.style.background = 'red';
+                d.style.color = 'white';
+
+            }
+            document.getElementById("demo").innerHTML = x;
+            document.getElementById("res").innerText = "Resultado ->" + x
+
+        }
+    </script>
+
+</body>
+
+</html>

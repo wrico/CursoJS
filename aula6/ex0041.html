@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4 </title>
+<style>
+
+body {
+       font: italic 20pt Arial;}
+
+</style>
+
+</head>
+
+<body>
+    
+<script>
+
+var nome = window.prompt("qual o seu nome? ")
+
+var salario = Number(window.prompt("qual o seu salario? "))
+
+document.write(`Olá, <strong> ${nome.toUpperCase()} </strong> <br>`)
+
+document.write(`Seu nome tem ${nome.length} letras <br>`)
+
+document.write(`Salário atual ${salario.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})  }`)
+
+var a=salario.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})
+
+document.write(a)
+
+</script>
+
+
+</body>
+</html>

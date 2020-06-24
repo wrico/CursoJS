@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+    <style>
+        form#fContato{
+            max-width: 200;
+            height: auto;
+            color: blue;
+            position: absolute;
+            font-family: Arial;
+            display: block;
+            float: left;
+       }
+
+    </style>
+
+</head>
+
+<h2>Projeto Enviar</h2>
+
+<form method="POST" id="fContato" oninput="calc_total()"> 
+        
+    <fieldset id="Num">
+        <legend>Conversão de Numeros</legend>
+        <p> <label for="cNum"> Quantidade:</label> <input type="number" name="tNum" id="cNum" size="20" /> </p>
+    
+        <p> <label for="cTab">   Valor de Tabela  </label> 
+            <input type="text" name="tTab" id="cTab" readonly > <p/>
+
+        <p> <label for="cConv">   Convertido Preço Total: R$  </label> 
+            <input type="text" name="tTot" id="cTot" readonly > <p/>
+    
+        <p> <label for="cData">   Validade:  </label> 
+                <input type="date" name="tData" id="cData" readonly value="2020-08-03" > <p/>    
+
+
+        <!-- [BOTÃO ENVIAR] -->
+    <input type="submit" value="Enviar"/>
+
+</form>
+
+<p>Clique em Enviar</p>
+
+</body>
+
+<script>
+    function calc_total() {
+        var qtd = Number(document.getElementById('cNum').value)
+        
+        var tot = qtd*1500
+
+        tot = tot.toLocaleString('pt-BR', {style: 'currency' , currency: 'BRL'})
+        
+        document.getElementById('cTot').value = tot
+        document.getElementById('cTab').value = 1500
+        document.getElementById('cData').value = '2020-06-01'
+        
+    }
+
+</script>
+
+
+</html>

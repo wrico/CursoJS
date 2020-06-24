@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>    <!-- Head - Cabeça */ --> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Word!</title> <!-- comentário em html --> 
+    <style> /* comentário em css */
+        body{ background-color: rgb(235, 238, 247);color: blueviolet; font-size: 20;}
+        H1{color: rgb(226, 147, 147);}  //define a cor do H1
+    </style>
+</head>
+<body>  <!-- Corpo --> 
+<h1>  <b>Olá, mundo! </b> </h1> <!-- Parte HTML --> 
+
+<script>  
+
+ var m1 = Number(window.prompt("digite um numero"))
+ var m2 = Number(window.prompt("digite outro"))
+ var x = m1+m2  
+ alert(" Usando Number - " + x)
+
+var s1 = String(m1)
+var s2 = String(m2)
+var s3 = Number(s1+s2)
+
+alert(`Template String com placeholde entre ${s1} e ${s2} é ${s3}`)
+
+alert(`somando tudo ${s1+s2}`)
+
+alert(`o S3 é ${s3}`)
+
+alert(`ou a soma de tudo númerica é ${m1+m2}`)
+
+document.write(`ou a soma de tudo númerica é ${m1+m2} ou Number de ${s3.toFixed(2)}`)
+
+</script>
+
+<script type="text/javascript"> 
+    var test=Number(s3); 
+    document.write(test.toFixed(2));   
+    documett.write(teste.toFixed(2).replace('.'','))        
+</script> 
+
+
+</body>
+</html>

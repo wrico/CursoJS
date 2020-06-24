@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora do Dia</title>
+    <style>
+        body {
+            background-color: rgb(8, 64, 99)
+        }
+
+        header,
+        footer {
+            border: solid blue 2px;
+            border-radius: 20px;
+            width: 500px;
+            border-color: rgba(255, 255, 0, 0.582);
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin: 20px auto;
+        }
+
+        header h1 {
+            text-align: center;
+            color: white;
+        }
+
+        footer,
+        div {
+            text-align: center;
+            color: darkblue;
+            padding: 5px;
+        }
+
+        footer {
+            font-style: italic;
+            font-size: small;
+        }
+
+        section {
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.322);
+            /* deslocamento lateral, deslocameto vertical, espalhamento e cor */
+            border: solid blue 2px;
+            width: 500px;
+            border-color: rgba(255, 255, 0, 0.582);
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin: 20px auto;
+            background-color: cornsilk;
+
+        }
+    </style>
+</head>
+
+<header>
+    <h1>Hora do Dia</h1>
+</header>
+
+<body onload="carregar()">
+
+    <script>
+        function carregar() {
+
+            var msg = window.document.getElementById('msg')
+            var img = window.document.getElementById('imagem')
+
+            var data = new Date()
+            var hora = data.getHours()
+            var minutos = data.getMinutes()
+            var segundos = data.getSeconds()
+
+            minutos = checkTime(minutos);
+            segundos = checkTime(segundos);
+            t = setTimeout('carregar()', 500);
+
+            msg.innerText = `Agora são ${hora}:${minutos}:${segundos} horas`
+
+            if (hora >= 0 && hora < 12) {
+                img.src = "manha3.png"
+                document.body.style.background = '#e2cd9f'
+            }
+
+            else if (hora >= 12 && hora < 18) {
+                img.src = "tarde3.png"
+                document.body.style.background = '#b9846f'
+            }
+
+            else {
+                img.src = "noite3.png"
+                document.body.style.background = '#515154'
+            }
+
+        }
+
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+
+    </script>
+
+    <section>
+        <div id="msg">
+        </div>
+        <div id="foto">
+            <img id="imagem" src="manha3.png" alt="Foto do dia">
+        </div>
+    </section>
+
+</body>
+
+<footer>
+    <p> Copywrite by &copyWilCoporation </p>
+</footer>
+
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos na DIV</title>
+    <style>
+        div#area {
+            background: green;
+            font: normal 10pt Arial;
+            color: white;
+            height: 100px;
+            line-height: 100px; /* A propriedade CSS line-height permite controlar o espaçamento entre as linhas de um texto */
+            text-align: center;
+            width: 200px;
+            float: left;
+            position: relative;
+        }
+
+        div#area2 {
+            position: relative;
+            border: solid black 2px;
+            line-height: 100px;
+            width: 100px;
+            height: 100px;
+            float: left;
+            text-align: center;
+            color: white;
+            background: blueviolet;
+            margin-left: 20px;
+        }
+
+        div#area3 {
+            position: relative;
+            border: solid black 2px;
+            line-height: 100px;
+            width: 100px;
+            height: 100px;
+            float: left;
+            text-align: center;
+            color: white;
+            background: blueviolet;
+            margin-left: 20px;
+        }
+    
+    </style>
+</head>
+
+<body>
+    <div id="area" onclick="clicar(1)" onmouseover="entrar(1)" onmouseout="sair(1)" onmousedown="apertou(1)">
+        interajaaaaa
+    </div>
+
+    <div id="area2" onclick="clicar(2)" onmouseover="entrar(2)" onmouseout="sair(2)" onmousedown="apertou(2)">
+        interajaaaaa
+    </div>
+
+    <div id="area3" onclick="clicar(3)" onmouseover="entrar(3)" onmouseout="sair(3)" onmousedown="apertou(3)">
+        interajaaaaa
+    </div>
+
+
+    <script>
+
+        var a = window.document.getElementById("area")
+        var b = window.document.getElementById("area2")
+
+        function clicar() {
+
+            a.innerText = "Clicou"
+            a.style.background = "red"
+            b.innerText = "Clicou"
+            b.style.background = "red"
+        }
+
+        function apertou() {
+            a.innerText = "Apertado"
+            a.style.background = "red"
+            b.innerText = "Apertado"
+            b.style.background = "red"
+        }
+
+        function entrar() {
+
+            a.innerText = "MouseOver"
+            b.innerText = "MouseOver"
+        }
+        function sair() {
+            a.innerText = "interajaaaaa"
+            a.style.background = "green"
+            b.innerText = "interajaaaaa"
+            b.style.background = "green"
+        }
+
+    </script>
+
+
+</body>
+
+</html>

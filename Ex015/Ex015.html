@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificadr de Idade</title>
+    <style>
+        body {
+            background-color: rgb(8, 64, 99)
+        }
+
+        header,
+        footer {
+            border: solid blue 2px;
+            border-radius: 20px;
+            width: 500px;
+            border-color: rgba(255, 255, 0, 0.582);
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin: 20px auto;
+        }
+
+        header h1 {
+            text-align: center;
+            color: white;
+        }
+
+        footer,
+        div {
+            text-align: center;
+            color: darkblue;
+        }
+
+        footer {
+            font-style: italic;
+            font-size: small;
+            color: yellow;
+        }
+
+        img {
+            width: 250px;
+            height: auto;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        img#foto{
+            align-items: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+        section {
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.322);
+            /* deslocamento lateral, deslocameto vertical, espalhamento e cor */
+            border: solid blue 2px;
+            width: 500px;
+            border-color: rgba(255, 255, 0, 0.582);
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin: 20px auto;
+            background-color: cornsilk;
+        }
+    </style>
+
+    <script>
+        function verificar() {
+            data = new Date()
+            var ano = data.getFullYear() /* ano com 4 dígitos */
+            var fano = window.document.getElementById("txtano") /* ano do formulário */
+            /* var res = document.getElementById("btres") */
+            var res = document.querySelector('div#res')
+            var fsex = document.getElementsByName("radsex") /* primeiro elemento do bt radio */
+            var idade = ano - Number(display.value)
+
+            var img = document.createElement('img')
+            img.setAttribute('id', 'foto')
+
+            var genero = ""
+
+            if (fsex[0].checked) {
+                genero = "Homem"
+            } else if (fsex[1].checked) {
+                genero = "Mulher"
+            }
+            res.innerHTML = `Detectamos ${genero} com ${idade} anos`
+            res.appendChild(img)
+
+            // img.setAttribute("align", "right")
+
+            if (genero == "Homem") {
+                if (idade < 11) {
+                    //criança
+                    img.setAttribute('src', 'bebe.jpg')
+                    
+                } else if (idade < 22) {
+                    //jovem
+                    img.setAttribute('src', 'homem20anosb.png')
+                } else if (idade < 60) {
+                    // adulto
+                    img.setAttribute('src', 'adulto.png')
+                } else {
+                    //idoso
+                    img.setAttribute('src', 'oldmanb.png')
+                }
+            } else if (genero == "Mulher") {
+                if (idade < 11) {
+                    //criança
+                    img.setAttribute('src', 'bebeab.png')
+                } else if (idade < 22) {
+                    //jovem
+                    img.setAttribute('src', 'mulher20anosb.png')
+                } else if (idade < 60) {
+                    // adulto
+                    img.setAttribute('src', 'adulta.png')
+                } else {
+                    //idoso
+                    img.setAttribute('src', 'oldwomanb.png')
+                }
+            }
+        }
+    </script>
+</head>
+
+<header>
+    <h1>Verificador de Idade</h1>
+</header>
+
+<body>
+    <section>
+        <div  align="center" >
+            <p> Ano de Nascimento
+                <!--Cria campo de entrada-->
+
+            <p> 1900 <input type="range" name="vol" id="fano" value="1900" min="1900" max="2020"
+                    oninput="display.value=value" onchange="display.value=value ; verificar()"> 2020 </p>
+
+            <input type="number" id="display" value="1900" name="vol" style="width: 36pt;" oninput="fano.value=value"
+                onchange="verificar()">
+
+            </p>
+            <p>Sexo
+                <!--Cria botões-->
+                <input type="radio" name="radsex" id="masc" checked>
+                <label for="masc">Masculino </label>
+                <!--name tem que ser o mesmo para os dois -->
+                <input type="radio" name="radsex" id="fem">
+                <label for="fem">Feminino</label>
+            </p>
+
+        </div>
+        <div id="res" align="center">
+
+            Resultado
+
+        </div>
+    </section>
+
+</body>
+
+<footer>
+    <p> Copywrite by &copyWilCoporation </p>
+</footer>
+
+</html>
