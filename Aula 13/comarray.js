@@ -4,7 +4,7 @@ var text = "";
 
 while (cars[i]) {
   text += cars[i] + "<br>";
-  console.log(cars[i])
+  console.log(i,"-" ,cars[i])
   i++;
 }
 
