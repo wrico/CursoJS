@@ -1,44 +1,71 @@
 body {
     background-color: rgb(8, 64, 99)
-}
-
-header,
-footer {
-    border       : solid blue 2px;
+        }
+header, footer {
+    border: solid blue 2px;
     border-radius: 20px;
-    width        : 500px;
-    border-color : rgba(255, 255, 0, 0.582);
-    text-align   : center;
-    margin-top   : 20px;
+    width: 500px;
+    border-color: rgba(255, 255, 0, 0.582);
+    text-align: center;
+    margin-top: 20px;
     margin-bottom: 20px;
-    margin       : 20px auto;
+    margin: 20px auto;
 }
-
 header h1 {
     text-align: center;
-    color     : white;
+    color: white;
 }
 
-footer,
 div {
-    text-align: center;
-    color     : darkblue;
+    color: darkblue;
 }
 
 footer {
     font-style: italic;
-    font-size : small;
+    font-size: small;
+    color: yellow;
+}
+section {
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.322) ; /* deslocamento lateral, deslocameto vertical, espalhamento e cor */
+    border: solid blue 2px;
+    width: 500px;
+    border-color: rgba(255, 255, 0, 0.582);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin: 20px auto;
+    background-color: cornsilk;
 }
 
-section {
-    box-shadow      : 3px 3px 10px rgba(0, 0, 0, 0.322);
-    /* deslocamento lateral, deslocameto vertical, espalhamento e cor */
-    border          : solid blue 2px;
-    width           : 500px;
-    border-color    : rgba(255, 255, 0, 0.582);
-    text-align      : center;
-    margin-top      : 20px;
-    margin-bottom   : 20px;
-    margin          : 20px auto;
-    background-color: cornsilk;
+input {
+    padding: 2px;
+    margin: 10px;
+    height: 14px;
+    size: 5px;
+        
+}
+
+label {
+    display: inline-block;
+    width: 90px;
+    
+}
+
+form {
+    /* Apenas para centralizar o form na página */
+    margin-left: 20px;
+    width: 420px;
+    /* Para ver as bordas do formulário */
+    padding: 1em;
+    // border: 1px solid #CCC;
+    // border-radius: 1em;
+    display: inline-block;
+}
+
+div#div2 {
+    display: inline-block;
+    border-radius: 1em;
+}
+
+input:hover, textarea:hover {
+    background-color: lightgray; 
 }
