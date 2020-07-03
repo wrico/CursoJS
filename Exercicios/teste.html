@@ -1,41 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+	<body>
+		<select id="language" onChange="update()">
+			<option value="pt">Português</option>
+			<option value="en">English</option>
+			<option value="es">Español</option>
+		</select>
+		<input type="text" id="value">
+		<input type="text" id="text">
 
-    <title>Teste</title>
-</head>
-<body>
-    
-<script>
+		<script type="text/javascript">
+			function update() {
+				var select = document.getElementById('language');
+				var option = select.options[select.selectedIndex];
 
-// Crio uma variável com valor 0
-var count = 0;
+				document.getElementById('value').value = option.value;
+				document.getElementById('text').value = option.text;
+			}
 
-inicio=100
-fim=3
-pace=4
-
-// Inicio o laço com a condição
-while ( inicio > fim) {
-	// Escrevo a variável count na página
-	document.writeln( count );
-     
-    document.write ("<br>");
-	// Incremento a variável count em 1 a cada volta do laço
-    count++;
-    
-    document.writeln(inicio)
-
-    inicio=inicio-pace
-    
-    document.write ("<br>");
-    document.write ("<br>");
-    
-} 
-
-</script>
-
-</body>
+			update();
+		</script>
+	</body>
 </html>

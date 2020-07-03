@@ -69,3 +69,11 @@ div#div2 {
 input:hover, textarea:hover {
     background-color: lightgray; 
 }
+
+.lista {
+    background-color: #eee;
+    width: 200px;
+    height: 100px;
+    border: 1px dotted black;
+    overflow-y: scroll; /* Add the ability to scroll */
+  }
