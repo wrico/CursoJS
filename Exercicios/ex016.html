@@ -29,15 +29,18 @@
                     </div>
                     <div class="form-group">
                         <label for="vpasso">Passo:</label>
-                        <input type="number" id="vpasso" size="2" min="0" max="99" maxlength="2" />
+                        <input type="text" id="vpasso" size="2" min="1" max="99" maxlength="2" />
                         <button type="button" onclick="executa()">Contar</button>
                         <button type="reset">Cancela</button>
                     </div>
                 </fieldset>
+
                 <fieldset>
                     <legend>Resultado</legend>
-                    <input type="text" id="res" size="20">
+                    <div id="res"></div>
                 </fieldset>
+
+
             </form>
         </div>
 
@@ -47,42 +50,32 @@
 
         function executa() {
 
-            var inicio = document.getElementById("vinic").value
-            var fim = document.getElementById("vfim").value
-            var pace = document.getElementById("vpasso").value
-
-            // Crio uma variável com valor 0
-            var count = 0;
-
-            // Inicio o laço com a condição
-
-            alert(inicio)
-            alert(fim)
-            alert(pace)
-
-            while (inicio > fim) {
-                // Escrevo a variável count na página
-                document.writeln(count);
-
-                document.write("<br>");
-                // Incremento a variável count em 1 a cada volta do laço
-                count++;
-
-                document.writeln(inicio)
-
-                inicio = inicio - pace
-
-                document.write("<br>");
-                document.write("<br>");
-
-                alert(inicio)
-                alert(fim)
-                alert(pace)
 
 
-            }
+            res.innerHTML = ""
 
+            var txtinicio = window.document.querySelector('input#vinic') // variável chegou string
+            var valinicio = Number(txtinicio.value)                      // variável convertida para número
 
+            var txtfim = window.document.querySelector('input#vfim')      // variável chegou string
+            var valfim = Number(txtfim.value)                             // variável convertida para número
+
+            var txtpasso = window.document.querySelector('input#vpasso')    // variável chegou string
+            var valpasso = Number(txtpasso.value)                           // variável convertida para número
+
+            // res.innerHTML = ` ${valinicio} `                        // o $ da um espaço - pode tirar
+
+            if (valinicio > valfim) {
+
+                while (valinicio > valfim) {
+
+                    // res.innerHTML += `${valfim} `
+                    // res.innerHTML += `${valpasso} `
+                    res.innerHTML += ` ${valinicio} `
+                    valinicio = valinicio - valpasso
+                }
+
+            } else { res.innerHTML = ("Valor do final não pode ser menor que o inicial")}
 
         }
 
