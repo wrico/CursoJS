@@ -1,0 +1,14 @@
+
+ini=30
+fim=5
+stringao=""
+
+console.log(toString(parseInt(ini/fim)))
+
+
+while (parseInt(ini/fim) > 0) {
+                
+    // strigao = strigao +" "+ toString(parseInt(ini/fim))
+    console.log(stringao)
+
+ }

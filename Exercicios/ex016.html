@@ -47,11 +47,42 @@
 
         function executa() {
 
-            var ini = document.getElementById("vinic").value
+            var inicio = document.getElementById("vinic").value
             var fim = document.getElementById("vfim").value
             var pace = document.getElementById("vpasso").value
 
-            document.getElementById("res").value =  parseInt(ini/fim)
+            // Crio uma variável com valor 0
+            var count = 0;
+
+            // Inicio o laço com a condição
+
+            alert(inicio)
+            alert(fim)
+            alert(pace)
+
+            while (inicio > fim) {
+                // Escrevo a variável count na página
+                document.writeln(count);
+
+                document.write("<br>");
+                // Incremento a variável count em 1 a cada volta do laço
+                count++;
+
+                document.writeln(inicio)
+
+                inicio = inicio - pace
+
+                document.write("<br>");
+                document.write("<br>");
+
+                alert(inicio)
+                alert(fim)
+                alert(pace)
+
+
+            }
+
+
 
         }
 
