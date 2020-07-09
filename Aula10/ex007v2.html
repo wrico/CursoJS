@@ -5,6 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
+
+    <style>
+        body {
+            font: normal 18pt Arial;
+        }
+
+        input {
+            font: normal 18pt Arial;
+            width: 100px;
+        }
+
+        div {
+            margin-top: 20px;
+            color: rgb(186, 130, 238);
+            font-style: italic;
+        }
+
+    </style>
+
+<script>
+    function calc(n) {
+        var operacao = n.value;
+        var n1 = parseFloat(document.getElementById("nn1").value);
+        var n2 = parseFloat(document.getElementById("nn2").value);
+        var calculo = eval(n1 + operacao + n2);
+        if (!isNaN(calculo)) {
+            document.getElementById('nRes').value = calculo
+        }
+    }
+
+    function limpa() {
+
+        document.getElementById('nn1').value = "";
+        document.getElementById('nn2').value = "";
+       /* document.getElementById('nRes').value = "0" Pode ser da maneira abaixo */
+       window.document.querySelector('input#nRes').value = '0'
+
+
+    }
+
+</script>
+
 </head>
 
 <body>
@@ -33,46 +75,9 @@
     </div>
 
 
-    <style>
-        body {
-            font: normal 18pt Arial;
-        }
 
-        input {
-            font: normal 18pt Arial;
-            width: 100px;
-        }
 
-        div {
-            margin-top: 20px;
-            color: rgb(186, 130, 238);
-            font-style: italic;
-        }
 
-    </style>
-
-    <script>
-        function calc(n) {
-            var operacao = n.value;
-            var n1 = parseFloat(document.getElementById("nn1").value);
-            var n2 = parseFloat(document.getElementById("nn2").value);
-            var calculo = eval(n1 + operacao + n2);
-            if (!isNaN(calculo)) {
-                document.getElementById('nRes').value = calculo
-            }
-        }
-
-        function limpa() {
-
-            document.getElementById('nn1').value = "";
-            document.getElementById('nn2').value = "";
-           /* document.getElementById('nRes').value = "0" Pode ser da maneira abaixo */
-           window.document.querySelector('input#nRes').value = '0'
-    
-
-        }
-
-    </script>
 </body>
 
 </html>
