@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caracteriristicas</title>
+    <style>
+        p {
+            text-align: justify;
+            text-indent: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1> Olá Mundo! </h1>
+    <-- H1 é hierarquia de título -->
+        <h2> Subtítulo de h1 </h2>
+        <h3> Principais tags </h3>
+        <h4> Parágrafos <br /> </h4>
+        <h4> Espaço entre palavras &nbsp </h4>
+        <h1> Simbolos Especiais </h1>
+        <p> tag menor que &lt; </p>
+        <p> tag maior que &gt; </p>
+        <p> tag menor igual a &le; </p>
+        <p> tag maior igual a &ge; </p>
+        <p> Moedas Libra: &pound; Yen &yen; Euro &euro;
+            <p> Copyright &copy Marca Registrada &reg; TrendMark &trade; </p>
+            <p> Outros &permil; &sum; &infin; &times; &plusmn &oplus; &radic; &ne; </p>
+            <p> Delta minúscula &delta; Delta maiuscula &Delta; ; Lambida &lambda; Omega &omega; Phi &phi; </p>
+            <p> Setas &larr; &rarr; &uarr; &darr; &harr; &Rarr; </p>
+            <p> Baralho &spades; &clubs; &hearts; &diams; </p> <br />
+            <p> transforma em negrito com p - provavelmente descontinuada </p>
+            <p>
+                <srong>Transfora em negrito também mas com a nova strong </srong>
+            </p>
+            <p><i> Italico com - i s/ enfase, provalmente escontnuada</i> </p>
+            <p><em> Italico enfase nova tag em </em> </p>
+            <p> A tag del para cortar <del> &nbsp antes era a "s" </del> </p>
+            <p>A tag <u>u - foi substitida </u> pelo CSS </p>
+            <p> Utilize span <span style="text-decoration: underline"> dessa forma span style="text-dcoration: underline
+                    (ou overline, line-through, none)" </span></p>
+            <p> o paramento font-weight vai indicar o qto se quer de negrito bold bolder... <span
+                    style="font-weight: 900;"> <br /> Esse é bolder / 900 </span></p>
+            <p><span style="background-color: brown;"> olha isso ! </span> </p>
+            <p>Alinhamento de texto também é no CSS </p>
+            <p>
+                <h5 style="text-align: center"> alinhado no centro com - span style="text-align: center" - </h5>
+            </p>
+
+            <p style="text-decoration-line: none;"> Paragrafo abaixo está justificado e identado, os dois paramentros
+                separados por ; ou nas configurações globais do head</p>
+
+            <p style="text-align: justify; text-indent: 50px;  "> O <b>Google Glass</b> é um acessório em forma de
+                óculos que possibilita a interação dos usuários com diversos conteúdos em realidade aumentada. Também
+                chamado de <i>Project Glass</i>, o eletrônico é capaz de tirar fotos a partir de comandos de voz, enviar
+                mensagens instantâneas e realizar vídeo&shy;con&shy;ferên&shy;cias. Seu lançamento está previsto para
+                2014, e seu preço deve ser de US$ 1,5 mil. Atualmente o Google Glass encontra-se em fase de testes e já
+                possui um vídeo totalmente gravado com o dispositivo. Além disso, a companhia de buscas registrou novas
+                patentes anti-furto e de desbloqueio de tela para o acessório.</p>
+
+            <p style="text-decoration-line: none;"> não da bypass do head</p>
+
+            <p style="text-align: left;  "> O <b>Google Glass</b> é um acessório em forma de óculos que possibilita a
+                interação dos usuários com diversos conteúdos em realidade aumentada. Também chamado de <i>Project
+                    Glass</i>, o eletrônico é capaz de tirar fotos a partir de comandos de voz, enviar mensagens
+                instantâneas e realizar vídeo&shy;con&shy;ferên&shy;cias. Seu lançamento está previsto para 2014, e seu
+                preço deve ser de US$ 1,5 mil. Atualmente o Google Glass encontra-se em fase de testes e já possui um
+                vídeo totalmente gravado com o dispositivo. Além disso, a companhia de buscas registrou novas patentes
+                anti-furto e de desbloqueio de tela para o acessório.</p>
+
+            <p> Modificar a configuração da tag dentro do head (comportamental) </p>
+
+
+
+            <p> Exemplos de <sub> formatação </sub> </p>
+            <p> x <sup> 2 </sup> e H <sub>2</sub>O </p>
+
+            <p>Formatação de códigos com pre e code </p>
+
+            <pre>
+<code>
+#include &ltiostream&gt
+int main() {
+    count << "olá mundo!";
+    return 0;
+}
+</code>
+</pre>
+
+            <!-- <ol type="1" start="3">  ol cria uma lista ordenada start x é onde começa, x sempre número--> -->
+
+            <ul type="disc">
+                <!--lista não numerada square, circle ou disc-->
+
+                <nav>
+                    <h1>Menu Principal</h1>
+                    <li> Home </li>
+                    <!---li ítem da lista / numerada é type 1, A/a alfabetica, I/i romanos, -->
+                    <li>Especificações</li>
+                    <li>Fotos</li>
+                    <li>Multimídia</li>
+                    <ol>
+                        <li>Músicas</li>
+                        <li>Vídeos</li>
+                    </ol>
+                    <li>Fale conosco</li>
+                </nav>
+            </ul>
+
+            <ul type="circle">
+                <li>This is a list item.</li>
+                <li>The items in this list don't need to be in order.</li>
+                <li>This is an unordered list.</li>
+            </ul>
+
+            <ul type="square">
+                <li>HTML</li>
+                <li>Java</li>
+                <li>JavaScript</li>
+                <li>SQL</li>
+            </ul>
+
+            <ul type="none">
+                <li>HTML</li>
+                <li>Java</li>
+                <li>JavaScript</li>
+                <li>SQL</li>
+            </ul>
+
+            <!-- imagem flutuante -->
+            <img src="/SAP/imagem1.jpg" alt="" style="float:right; width:250px;height:260px;">
+            <p>
+                Em HTML 5, o que anteriormente era chamado de conteúdo
+                <em>block-level</em> agora é chamado de conteúdo
+                <em>flow</em> .
+            </p>
+
+            <p> Site para manter a compatiblidade entre <a href="http://prefixr.com" target="_blank">
+                    <em>navegadores</em> </a> </p>
+            <p>Site para <a href="https://fonts.google.com/" target="_blank"> <em>fontes</em> </a>
+
+
+</body>
+
+</html>

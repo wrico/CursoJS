@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="shit.css">
+</head>
+
+let valor=0
+
+function formatareal(valor) {
+    (valor).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+    }
+
+
+<body>
+
+    <div id="site"> 
+       
+        <header id="cabec">
+            Este é  Cabeçalho 
+        </header>
+
+        <section id="corpo">
+            <h2>Este é o Corpo</h2>
+            <p> Formatar 15000 reais</p>
+            <p> formatareal(15000)  </p>
+            document.write("Olá Mundo"+" "+"Hoje é dia "+Date())
+            document.write("Olá Mundo"+" "+"Hoje é dia "+formatareal(15000))
+        </section>
+
+        <aside id="lateral">
+           <h2> Esta é a Lateral </h2>
+        </aside>
+
+        <footer id="rodape">
+            <p>RODAPE</p>
+        </footer>
+    
+    </div>
+
+
+</body>
+</html>
+
+

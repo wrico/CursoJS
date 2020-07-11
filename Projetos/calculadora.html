@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+
+    <style>
+        body {
+            font: normal 18pt Arial;
+        }
+
+        input {
+            font: normal 18pt Arial;
+            width: 100px;
+        }
+
+        div {
+            margin-top: 20px;
+            color: rgb(186, 130, 238);
+            font-style: italic;
+        }
+
+    </style>
+
+<script>
+    function calc(n) {
+        var operacao = n.value;
+        var n1 = parseFloat(document.getElementById("nn1").value);
+        var n2 = parseFloat(document.getElementById("nn2").value);
+        var calculo = eval(n1 + operacao + n2);
+        if (!isNaN(calculo)) {
+            document.getElementById('nRes').value = calculo
+        }
+    }
+
+    function limpa() {
+
+        document.getElementById('nn1').value = "";
+        document.getElementById('nn2').value = "";
+       /* document.getElementById('nRes').value = "0" Pode ser da maneira abaixo */
+       window.document.querySelector('input#nRes').value = '0'
+
+
+    }
+
+</script>
+
+</head>
+
+<body>
+    <h1>Calculadora</h1>
+
+    <div id="entradas">
+        <input type="number" name="nN1" id="nn1">
+        <input type="number" name="nN2" id="nn2">
+    </div>
+
+    
+    <div id="operadores">
+        <input type="button" value="+" onClick="calc(this)">
+        <input type="button" value="-" onClick="calc(this)">
+        <input type="button" value="*" onClick="calc(this)">
+        <input type="button" value="/" onClick="calc(this)">
+        <input type="button" value="**" onClick="calc(this)">
+    </div>
+  
+    <div id="resultado">
+        <input type="button" name="tRes" id="nRes" readonly value="0">
+    </div>
+
+    <div id="limpe">
+        <input type="button" value="CE" onClick="limpa()">
+    </div>
+
+</body>
+
+</html>

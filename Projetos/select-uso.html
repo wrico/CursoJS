@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 17 - Tabuada</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+
+        function executa() {
+
+            var prod = Number(vinic.value)
+
+            var tab = document.getElementById('seltab')
+
+            var c = 1
+
+            if (prod == 0) {
+                alert("Valor tem que ser diferente de zero")
+                return
+            }
+
+            tab.innerText = " "
+            while (c <= 10) {
+                var item = document.createElement('option') // motando o select
+                item.text = ` ${prod} * ${c} = ${prod * c} `
+                tab.appendChild(item)
+                c++
+            }
+        }
+    </script>
+
+</head>
+
+<header>
+    <h1> Vamos Contar </h1>
+</header>
+
+<body>
+    <section>
+        <div>
+            <form>
+                <fieldset>
+                    <legend>Tabuada</legend>
+                    <div class="form-group">
+                        <label for="vinic"> Tabuada </label>
+                        <input type="number" id="vinic" maxlength="5" size="5" />
+                    </div>
+
+                    <div class="form-group">
+                        <button type="button" onclick="executa()"> Contar </button>
+                        <button type="reset" onclick="limpa()">Limpa</button>
+                    </div>
+                </fieldset>
+
+                <!-- SUBSTIRUIDO PELO SELECT 
+                <fieldset>
+                    <legend>Resultado</legend>
+                    <div id="res">
+                    </div>
+                </fieldset>
+                -->
+
+                <!-- size = 10 evita ter que clicar para abrir -->
+                <Select id="seltab" size="10">
+                    Tabuada
+                </Select>
+
+            </form>
+        </div>
+
+    </section>
+
+
+
+</body>
+
+<footer>
+    <p> Copywrite by &copyWilCoporation </p>
+</footer>
+
+</html>
