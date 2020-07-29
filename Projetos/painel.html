@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p> "HELLO WORLD".</p>
+
+    <button onclick="executa()">Try it</button>
+
+    <p id="para"> Vou colocar o Hello aqui </p>
+
+    <input type="button" onclick="clearInterval(timer)" value="stop">
+
+    <script>
+
+        var stri = "HELLO WORLD";
+
+        var i = 0
+
+        var res = ""
+
+        var carac = " "
+
+        document.getElementById('para').innerHTML = '';
+        document.getElementById('para').disabled = false;
+	    document.getElementById('para').style.color = "#AAF"
+	    document.getElementById('para').style.borderColor = "#000";
+	  //  document.getElementById('para').style.display = "";
+
+        var j = 0;
+        // var timer = setInterval(function() {document.getElementById('para').innerHTML = (j++)}, 1000);
+        
+
+        var timer = setInterval(function() { document.getElementById('para').innerHTML += `${stri.charAt(j++)}`  }, 1000);
+
+        function executa() {
+
+            document.getElementById('para').innerHTML = ""
+
+            for (i = 0; i < stri.length; i++) {
+
+                /*
+                var delay = 2000  
+                setTimeout(function () {
+                    document.getElementById('para').innerHTML += `${stri.charAt(i)}`
+                }, delay);
+                */
+
+                document.getElementById('para').innerHTML += `${stri.charAt(i)}`
+
+            }
+
+        }
+
+        
+
+            
+  
+
+    </script>
+
+</body>
+
+</html>

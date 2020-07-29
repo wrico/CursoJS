@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p> "HELLO WORLD".</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+
+        var stri = "HELLO WORLD";
+        alert(stri.length)
+        var res = " "
+        
+        for (i = 0; i < stri.length; i++) {
+            res += stri.charAt(i);
+            // document.write(res)
+
+            setTimeout(function () { document.write(res) }, 3000);
+
+        }
+
+    </script>
+
+</body>
+
+</html>

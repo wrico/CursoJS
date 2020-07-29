@@ -10,11 +10,13 @@
     <p id="demo"></p>
 
     <script>
+
         function myFunction() {
             var stri = "HELLO WORLD";
             alert(stri.length)
+            var res = " "
             for (i = 0; i < stri.length; i++) {
-                var res = stri.charAt(i);
+                res += stri.charAt(i);
                 document.write(res)
 
             }

@@ -1,0 +1,1 @@
+setTimeout(function() { console.log("setTimeout: Ja passou 3 segundo!"); }, 3000);

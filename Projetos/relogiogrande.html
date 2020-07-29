@@ -5,7 +5,9 @@
         header {
             margin-top: 20px;
         }
-
+        h1 {
+            text-align: center;
+        }
         footer {
             clear: both;
             border-top: 2px solid #606060;
@@ -25,59 +27,51 @@
         }
 
         div#nHora,
-        div#nDia {
+        div#nDia,
+        div#nMin,
+        div#nMes,
+        div#nSec,
+        div#nAno,
+        div#nDec,
+        div#cSec  {
             background: rgb(5, 1, 8);
             border: solid black 2px;
             height: 100px;
+            width: 100px;
             line-height: 100px;
             /* A propriedade CSS line-height permite controlar o espaçamento entre as linhas de um texto */
             text-align: center;
-            width: 100px;
             float: left;
             position: relative;
         }
-
         div#nMin,
         div#nMes {
-            position: relative;
-            border: solid black 2px;
             line-height: 100px;
-            width: 100px;
-            height: 100px;
-            float: left;
-            text-align: center;
             background: rgb(82, 19, 141);
             margin-left: 20px;
         }
 
         div#nSec,
         div#nAno {
-            position: relative;
-            border: solid black 2px;
             line-height: 100px;
-            width: 100px;
-            height: 100px;
-            float: left;
-            text-align: center;
             background: rgb(134, 61, 202);
             margin-left: 20px;
         }
 
         div#nDec {
-            position: relative;
-            border: solid black 2px;
             line-height: 100px;
-            width: 100px;
-            height: 100px;
-            float: left;
-            text-align: center;
             background: rgb(209, 178, 238);
+            margin-left: 20px;
+        }
+
+        div#cSec {
+            line-height: 100px;
+            background: rgb(229, 213, 245);
             margin-left: 20px;
         }
 
         header {
             border-bottom: solid brown;
-            text-align: center;
             font-size: 20px;
             margin-bottom: 30px;
         }
@@ -85,25 +79,36 @@
         section {
             background-color: #dddddd;
             display: flex;
-            width: 480px;
+            width: 630px;
             padding: 20px;
             margin-top: 10px;
             box-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
         }
 
         section#esq {
-            float: left;
-            margin-left: 60px;
-        }
+            /* float: left;
+            margin-left: 60px; */
 
-        section#dir {
-            float: right;
-            margin-right: 150px;
+
+            float: left;
+            margin-right: 60px;
             /* centralizando tudo */
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: center
+
+        }
+
+        section#dir {
+            float: right;
+            margin-right: 60px;
+            /* centralizando tudo */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
         }
     </style>
 
@@ -116,13 +121,12 @@
             var h = today.getHours();
             var m = today.getMinutes();
             var s = today.getSeconds();
-            var decs = Math.floor(new Date().getTime() % 1000 / 100);
-
-            var ms = today.getUTCMilliseconds();
+            var decs = Math.floor(new Date().getTime() % 1000 / 10);
+     
+            // var ms = today.getUTCMilliseconds();
             var dia = today.getDate();
             var mes = today.getMonth() + 1;
             var ano = today.getFullYear();
-
 
             m = checkTime(m)
             s = checkTime(s)
@@ -138,19 +142,23 @@
             document.getElementById('nAno').innerText = ano
 
             setInterval(function () {
-                decs = Math.floor(new Date().getTime() % 1000 / 100)
+                decs = Math.floor(new Date().getTime() % 1000 / 10)
                 decs = checkTime(decs)
-                document.getElementById('nDec').innerText = decs
-
-            }, 100)
-
+                document.getElementById('nDec').innerText = decs 
+                }, 100 )
+                
             function checkTime(i) {
                 if (i < 10) {
-                    i = "0" + i;
-                }
-                return i;
+                    i = "0" + i}
+                   return i;
             }
+
         }
+    
+        function stop()
+            {
+                alert("pausado!")   
+            }
     </script>
 </head>
 
@@ -165,6 +173,7 @@
         <div id="nMin"></div>
         <div id="nSec"></div>
         <div id="nDec"></div>
+        <div id="cSec" onclick="stop()"> Pausar </div>
     </section>
 
     <section id="dir">
@@ -173,6 +182,7 @@
         <div id="nAno"></div>
     </section>
 
+    
     <footer>
         Copywrite by &copyWilCoporation
     </footer>
