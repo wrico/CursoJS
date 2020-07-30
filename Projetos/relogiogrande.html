@@ -5,9 +5,11 @@
         header {
             margin-top: 20px;
         }
+
         h1 {
             text-align: center;
         }
+
         footer {
             clear: both;
             border-top: 2px solid #606060;
@@ -33,7 +35,7 @@
         div#nSec,
         div#nAno,
         div#nDec,
-        div#cSec  {
+        div#cSec {
             background: rgb(5, 1, 8);
             border: solid black 2px;
             height: 100px;
@@ -44,6 +46,7 @@
             float: left;
             position: relative;
         }
+
         div#nMin,
         div#nMes {
             line-height: 100px;
@@ -97,7 +100,6 @@
             flex-direction: row;
             justify-content: center;
             align-items: center
-
         }
 
         section#dir {
@@ -122,7 +124,7 @@
             var m = today.getMinutes();
             var s = today.getSeconds();
             var decs = Math.floor(new Date().getTime() % 1000 / 10);
-     
+
             // var ms = today.getUTCMilliseconds();
             var dia = today.getDate();
             var mes = today.getMonth() + 1;
@@ -144,21 +146,21 @@
             setInterval(function () {
                 decs = Math.floor(new Date().getTime() % 1000 / 10)
                 decs = checkTime(decs)
-                document.getElementById('nDec').innerText = decs 
-                }, 100 )
-                
+                document.getElementById('nDec').innerText = decs
+            }, 100)
+
             function checkTime(i) {
                 if (i < 10) {
-                    i = "0" + i}
-                   return i;
+                    i = "0" + i
+                }
+                return i;
             }
 
         }
-    
-        function stop()
-            {
-                alert("pausado!")   
-            }
+
+        function stop() {
+            alert("pausado!")
+        }
     </script>
 </head>
 
@@ -182,7 +184,7 @@
         <div id="nAno"></div>
     </section>
 
-    
+
     <footer>
         Copywrite by &copyWilCoporation
     </footer>

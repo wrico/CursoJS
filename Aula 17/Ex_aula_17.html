@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício Final do Curso Básico JavaScript</title>
+
+    <style>
+        body {
+
+            margin: 0;
+            padding: 0;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-top: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #botao {
+            background-color: blue;
+            color: yellow;
+            margin-left: 60px;
+            padding: 8px 8px;
+            font-size: 12pt;
+            border-radius: 8px;
+            border: 1px solid grey;
+            position: relative;
+
+        }
+
+        #botao:hover {
+            background-color: grey;
+            color: yellow;
+            padding: 8px 8px;
+            font-size: 12pt;
+            border-radius: 8px;
+            border: 1px solid whitesmoke;
+        }
+
+        div {
+            color: blue font-weight: 700;
+            font-size: larger;
+            border: 1px solid grey;
+            padding: 10px;
+        }
+
+        div#dois {
+            color: blue font-weight: 700;
+            font-size: larger;
+            padding: 0px;
+            margin-top: 20px;
+
+        }
+
+        header {
+            border-bottom: solid brown;
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        section#lado_esquerdo {
+            background-color: #dddddd;
+            width: 650px;
+            padding: 20px;
+            margin-top: 10px;
+            margin-left: 50px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
+            float: left;
+            position: relative;
+        }
+
+        section#lado_direito {
+            background-color: #dddddd;
+            width: 650px;
+            padding: 20px;
+            margin-top: 10px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
+            float: right;
+            position: relative;
+            margin-right: 50px;
+        }
+
+        footer {
+            clear: both;
+            border-top: 2px solid #606060;
+            text-align: right;
+            background: #ffab62;
+            width: 98.5%;
+            height: 30px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            line-height: 10px;
+            padding: 10px;
+        }
+
+        #seltab {
+            width: 200px;
+            background-color: lightgrey;
+        }
+    </style>
+
+    <script>
+
+        var lista = []
+        var i=0
+
+        function inclui(valor) {
+
+            lista.push(valor)
+
+
+            while (lista[i]) {
+                
+               // document.getElementById('dois').innerText += lista[i]
+
+               document.createElement('option') += lista[i]
+
+               i++
+            }
+
+        }
+
+
+    </script>
+</head>
+
+<header>
+    <h1> Exercício Última Aula do Básico </h1>
+</header>
+
+<body>
+
+    <section id="lado_esquerdo">
+        <div>
+            Entre com um número de 1 a 100 <input type="number" id="nro" name="nro" min="1" max="100">
+            <button id="botao" type="button" onclick="inclui(nro.value)"> Adicionar </button>
+
+        </div>
+
+        <div id="dois">
+            <Select id="seltab" size="10">
+                Lista de Números
+            </Select>
+        </div>
+    </section>
+
+    <section id="lado_direito">
+        <div>
+
+        </div>
+        <div>
+
+        </div>
+    </section>
+
+
+</body>
+
+<footer>
+    <p> Copywrite by &copyWilCoporation </p>
+</footer>
+
+</html>
