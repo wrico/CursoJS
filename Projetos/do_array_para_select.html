@@ -8,6 +8,7 @@
 
     <style>
         body {
+
             margin: 0;
             padding: 0;
             margin: 0 auto;
@@ -21,8 +22,7 @@
             text-align: center;
         }
 
-        #botaoi,
-        #botaof {
+        #botao {
             background-color: blue;
             color: yellow;
             margin-left: 60px;
@@ -34,8 +34,7 @@
 
         }
 
-        #botaoi:hover,
-        botaof:hover {
+        #botao:hover {
             background-color: grey;
             color: yellow;
             padding: 8px 8px;
@@ -113,19 +112,25 @@
         var array = new Array();
         var array = [""];
         var varray = 0
-        var idx = 0
 
         // Criar array para consistencias
 
         function cria_array(varray) {
+ 
+            array.push(varray)
 
-            var idx = array.indexOf(varray)
+            // Mostrar no Select
 
-            if (idx == -1) {
-                document.querySelector('textarea').value += "Valor " + varray + " adicionado" + "\n"    // o /n faz pular linha
-                array.push(varray)
-            } else if (varray == 0) { alert("Não pode ser zero") }
-            else { alert("Elemento já cadastrado!") }
+            select = document.getElementById('mySelect');
+
+            for (var i = 0; i < array.length; i++) {
+                var option = document.createElement("option");
+                option.setAttribute("value", array[i]);
+                option.text = array[i];
+                select.appendChild(option);
+
+            }
+
         }
 
     </script>
@@ -136,28 +141,35 @@
     <h1> Exercício Última Aula do Básico </h1>
 </header>
 
+
+
 <body>
 
     <section id="lado_esquerdo">
         <div>
             Entre com um número de 1 a 100 <input type="number" id="nro" name="nro" min="1" max="100">
-            <button id="botaoi" type="button" autofocus onclick="cria_array(nro.value)"> Adicionar </button>
-            <button id="botaof" type="button" onclick="finaliza(nro.value)"> Finalizar </button>
+            <button id="botao" type="button" onclick="cria_array(nro.value)"> Adicionar </button>
         </div>
 
+        <div id="dois">
+
+            <Select id="mySelect" size="10">
+
+            </select>
+
+            </Select>
+        </div>
     </section>
 
     <section id="lado_direito">
         <div id="tres">
-
-            <legend id="legenda">Lista de Números Escolhidos</legend>
-
-            <p><label for="cMsg"></label><textarea id="textarea" name="tMsg" cols="35" rows="5" disabled></textarea>
-            </p>
-
+            Array
+        </div>
+        <div>
 
         </div>
     </section>
+
 
 </body>
 
