@@ -11,37 +11,33 @@
             margin: 0;
             padding: 0;
             margin: 0 auto;
+            background-color: lavender;
         }
 
-        header {
-            margin-top: 20px;
-        }
-
-        h1 {
+        h2 {
             text-align: center;
+            padding: 0px;
         }
 
-        #botaoi,
-        #botaof {
-            background-color: blue;
+        button {
+            width: 100px;
+            height: 50px;
+            border: 0;
+            outline: none;
+            border-radius: 25px;
+            margin-left: 10px;
+            background-color: rgb(142, 90, 245);
             color: yellow;
-            margin-left: 60px;
-            padding: 8px 8px;
-            font-size: 12pt;
-            border-radius: 8px;
-            border: 1px solid grey;
-            position: relative;
-
+            font-weight: 700;
         }
 
-        #botaoi:hover,
-        botaof:hover {
-            background-color: grey;
-            color: yellow;
-            padding: 8px 8px;
-            font-size: 12pt;
-            border-radius: 8px;
-            border: 1px solid whitesmoke;
+        button:focus {
+            box-shadow: 0 0 0 3px yellow
+        }
+
+        button:hover {
+            box-shadow: 0 0 0 3px white;
+            color: white;
         }
 
         div {
@@ -51,23 +47,28 @@
             padding: 10px;
         }
 
-        div#dois {
+        div#divtotal {
             color: blue font-weight: 700;
+            border: 1px solid grey;
             font-size: larger;
-            padding: 0px;
+            padding: 10px;
             margin-top: 20px;
-
         }
 
         header {
+            border-top: solid brown;
             border-bottom: solid brown;
             font-size: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            margin-top: 0px;
+            color: white;
+            background: #fcc680;
+            padding: 0px;
         }
 
         section#lado_esquerdo {
             background-color: #dddddd;
-            width: 650px;
+            width: 700px;
             padding: 20px;
             margin-top: 10px;
             margin-left: 50px;
@@ -91,7 +92,7 @@
             clear: both;
             border-top: 2px solid #606060;
             text-align: right;
-            background: #ffab62;
+            background: #fcc680;
             width: 98.5%;
             height: 30px;
             position: absolute;
@@ -99,6 +100,9 @@
             left: 0;
             line-height: 10px;
             padding: 10px;
+            color: white;
+            border-bottom: solid brown;
+            border-top: solid brown;
         }
 
         #seltab {
@@ -111,29 +115,46 @@
 
         // inicializa as variáveis
         var array = new Array();
-        var array = [""];
         var varray = 0
         var idx = 0
-
-        // Criar array para consistencias
+        var valtotal = 0
 
         function cria_array(varray) {
-
-            var idx = array.indexOf(varray)
-
-            if (idx == -1) {
-                document.querySelector('textarea').value += "Valor " + varray + " adicionado" + "\n"    // o /n faz pular linha
-                array.push(varray)
-            } else if (varray == 0) { alert("Não pode ser zero") }
-            else { alert("Elemento já cadastrado!") }
+            if (varray != 0 && varray < 101) {
+                var idx = array.indexOf(varray)
+                if (idx == -1) {
+                    document.querySelector('textarea#textarea').value += "Valor " + varray + " adicionado" + "\n"    // o /n faz pular linha
+                    array.push(varray)
+                }
+                else { alert("Elemento já cadastrado!") }
+            } else {
+                alert("Escolha um número entre 1 e 100")
+            }
         }
 
+        function finaliza() {
+            if (array == 0) {
+                alert("Nada Inserido")
+                return
+            }
+            document.querySelector('textarea#totalarea').value = "total de itens cadastrados " + array.length + "\n\n"
+            array.sort()
+            let maior = array[array.length - 1]
+            let menor = array[0]
+            document.querySelector('textarea#totalarea').value += "O maior número informado foi " + maior + "\n\n"
+            document.querySelector('textarea#totalarea').value += "O menor número informado foi " + menor + "\n\n"
+            for (i = 0; i < array.length; i++) {
+                valtotal += Number(array[i])
+            }
+            document.querySelector('textarea#totalarea').value += "Somatório do conjunto " + valtotal + "\n\n"
+            document.querySelector('textarea#totalarea').value += "A média dos valores digitados é " + valtotal / array.length + "\n\n"
+            document.querySelector('textarea#totalarea').value += `\u{1F3C1} \u{1F601}`
+        }
     </script>
-
 </head>
 
 <header>
-    <h1> Exercício Última Aula do Básico </h1>
+    <h2> Exercício Última Aula do Curso Básico de JavaScript </h2>
 </header>
 
 <body>
@@ -142,20 +163,22 @@
         <div>
             Entre com um número de 1 a 100 <input type="number" id="nro" name="nro" min="1" max="100">
             <button id="botaoi" type="button" autofocus onclick="cria_array(nro.value)"> Adicionar </button>
-            <button id="botaof" type="button" onclick="finaliza(nro.value)"> Finalizar </button>
+            <button id="botaof" type="button" onclick="finaliza()"> Finalizar </button>
+            <button id="botaor" type="button" onclick="document.location.reload(true)"> Ressetar </button>
+        </div>
+
+        <div id="divtotal">
+            <legend id="totalizadora">Totalização</legend>
+            <p><label for="totalizadora"></label><textarea id="totalarea" name="totalarea" cols="35" rows="12"
+                    disabled></textarea></p>
         </div>
 
     </section>
 
     <section id="lado_direito">
         <div id="tres">
-
             <legend id="legenda">Lista de Números Escolhidos</legend>
-
-            <p><label for="cMsg"></label><textarea id="textarea" name="tMsg" cols="35" rows="5" disabled></textarea>
-            </p>
-
-
+            <p><label for="cMsg"></label><textarea id="textarea" name="tMsg" cols="35" rows="5" disabled></textarea></p>
         </div>
     </section>
 
