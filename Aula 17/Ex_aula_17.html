@@ -2,15 +2,19 @@
 <html lang="en">
 <!-- Este Exercício final do curso de JavaScript Básico ilustra as seguintes features:
    
-    - Utilização de Arrays
+    - Utilização e análise de dados dentro de arrays 
     - QuerySelector
     - TextArea
     - Pular linha em JS
     - Duração de variáveis
+    - REsset com reload > onclick="document.location.reload(true)
+    - limpeza do campo nro.value="" ...nro.focus()
+    - Incluido também o Select
 
     @wrico 
 
 -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +26,7 @@
             padding: 0;
             margin: 0 auto;
             background-color: lavender;
+            color: blue;
         }
 
         h2 {
@@ -57,7 +62,8 @@
             padding: 10px;
         }
 
-        div#divtotal {
+        div#divtotal,
+        div#divselect {
             color: blue font-weight: 700;
             border: 1px solid grey;
             font-size: larger;
@@ -119,9 +125,14 @@
             width: 200px;
             background-color: lightgrey;
         }
+
+        select#flista {
+            width: 150px;
+            height: 150px;
+        }
     </style>
 
-    <script>
+    <script defer>
 
         // inicializa as variáveis
         var array = new Array();
@@ -130,16 +141,26 @@
         var valtotal = 0
 
         function cria_array(varray) {
+
+            var lista = document.getElementById('flista') // cria a variavel do Select
+
             if (varray != 0 && varray < 101) {
                 var idx = array.indexOf(varray)
                 if (idx == -1) {
                     document.querySelector('textarea#textarea').value += "Valor " + varray + " adicionado" + "\n"    // o /n faz pular linha
                     array.push(varray)
+
+                    // Inclui no Select 
+                    var item = document.createElement('option')      // cria o elemento de forma dinamica
+                    item.text = "Valor " + varray + " adicionado"    // cria o ítem a ser incluído
+                    lista.appendChild(item)                          // inclui na lista  
                 }
                 else { alert("Elemento já cadastrado!") }
             } else {
                 alert("Escolha um número entre 1 e 100")
             }
+            nro.value = "" // Limpa o campo de entrada em qualquer ocorrência
+            nro.focus()  // Volta o foco p/ digitação
         }
 
         function finaliza() {
@@ -157,7 +178,9 @@
                 valtotal += Number(array[i])
             }
             document.querySelector('textarea#totalarea').value += "Somatório do conjunto " + valtotal + "\n\n"
-            document.querySelector('textarea#totalarea').value += "A média dos valores digitados é " + valtotal / array.length + "\n\n"
+            var conta = valtotal / array.length
+            var arredondado = parseFloat(conta.toFixed(2)) 
+            document.querySelector('textarea#totalarea').value += "A média dos valores digitados é " + arredondado + "\n\n" // valor arredondado para duas casas
             document.querySelector('textarea#totalarea').value += `\u{1F3C1} \u{1F601}`
         }
     </script>
@@ -187,9 +210,17 @@
 
     <section id="lado_direito">
         <div id="tres">
-            <legend id="legenda">Lista de Números Escolhidos</legend>
+            <legend id="legenda">Lista de Números Escolhidos em TextArea</legend>
             <p><label for="cMsg"></label><textarea id="textarea" name="tMsg" cols="35" rows="5" disabled></textarea></p>
         </div>
+
+        <div id="divselect">
+            <legend id="lSelect"> Lista de Números Escolhidos no Select </legend>
+            </br>
+            <select name="flista" id="flista" size="5" rows="5" disabled>  
+            </select>
+        </div>
+
     </section>
 
 </body>
