@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!--
+    
+Como usar o Arrow Function 
+
+Cada versão foi salva separadamente para entender o contexto da explicação 
+no vídeo do youtube do professor Binho https://youtu.be/IE6j6h8T81Q -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const array = [1, 2, 3]
+
+        /* Versão 1 do código
+        const arrayModified = array.map(mapear)
+        document.write(arrayModified)
+
+        function mapear(valor)
+        {
+            return valor*2
+        }
+        */
+
+        /* Versão 2 - colocando a função mapear dentro do arra.map
+        const arrayModified = array.map(function mapear(valor)
+        {
+            return valor*2
+        })
+        document.write(arrayModified)
+        */
+
+        /*Versão 3 - como está dentro do parenteses pode tirar o nome da função continuar funcionando.
+        const arrayModified = array.map(function (valor)
+        {
+            return valor*2
+        })
+        document.write(arrayModified)
+        */
+
+        /*Versão 4 - Com a nova sintaxe pode tirar também o nome função e colocar a arrow logo após os parenteses do parametro.
+
+        const arrayModified = array.map((valor)=>  // Tãdããããã
+        {
+            return valor*2
+        })
+        document.write(arrayModified)
+        */
+
+        /*Versão 5 - Como só tem um parametro, pode tirar os parenteses dele também
+
+        const arrayModified = array.map(valor =>   
+        {
+            return valor * 2
+        })
+        */
+
+        //Versão 6 - Como só tem um resultado, então dá pra remover a palavra return, remover as chaves, 
+
+        const arrayModified = array.map(valor => valor * 2)
+    
+        document.write(arrayModified)
+
+    </script>
+</head>
+
+<body>
+    <p>Hello Mundo Arrow Function</p>
+
+</body>
+
+</html>

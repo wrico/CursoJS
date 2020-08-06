@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class tabuada {
+            constructor(numero = 0, valores = []) {
+                this.valores = valores
+                this.numero = numero
+            }
+
+            get tabela() {
+                return this.valores.map(valor => {
+                    return { 
+                        numero: this.numero, 
+                        valor: valor, 
+                        resultado: this.numero * valor 
+                        }
+                })
+            }
+
+        }
+
+        let x = new tabuada(4, [2, 3, 4])
+
+        console.table(x.tabela)
+        
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
