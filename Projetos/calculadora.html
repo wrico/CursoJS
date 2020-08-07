@@ -22,30 +22,72 @@
             font-style: italic;
         }
 
+        .btn {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            height: 40px;
+            text-decoration: none;
+
+            /* A propriedade display: inline faz com que o elemento HTML seja renderizado inline, dentro do bloco na mesma linha. Quando o elemento encontra-se entre dois blocos ele forma o chamado 'bloco anônimo' e é renderizado com a menor largura possível*/
+        }
+
+        .btn-green {
+            background: green;
+            color: #fff;
+            box-shadow: 0 5px 0 #006000;
+            border: none;
+            text-decoration: none;
+        }
+
+        .btn-green:hover {
+            background: #006000;
+            color: #fff;
+            box-shadow: 0 5px 0 #003f00;
+            border: none;
+            text-decoration: none;
+        }
+
+        .btn-green:active {
+            box-shadow: none;
+            border: none;
+            position: relative;
+            top: 5px;
+            border: none;
+            text-decoration: none;
+        }
+
+        .btn:focus,
+        btn:active {
+            outline: none;
+        }
     </style>
 
-<script>
-    function calc(n) {
-        var operacao = n.value;
-        var n1 = parseFloat(document.getElementById("nn1").value);
-        var n2 = parseFloat(document.getElementById("nn2").value);
-        var calculo = eval(n1 + operacao + n2);
-        if (!isNaN(calculo)) {
-            document.getElementById('nRes').value = calculo
+    <script>
+        function calc(n) {
+            var operacao = n.value;
+            var n1 = parseFloat(document.getElementById("nn1").value);
+            var n2 = parseFloat(document.getElementById("nn2").value);
+            var calculo = eval(n1 + operacao + n2);
+            if (!isNaN(calculo)) {
+                document.getElementById('nRes').value = calculo
+            }
         }
-    }
 
-    function limpa() {
+        function limpa() {
 
-        document.getElementById('nn1').value = "";
-        document.getElementById('nn2').value = "";
-       /* document.getElementById('nRes').value = "0" Pode ser da maneira abaixo */
-       window.document.querySelector('input#nRes').value = '0'
+            document.getElementById('nn1').value = "";
+            document.getElementById('nn2').value = "";
+            /* document.getElementById('nRes').value = "0" Pode ser da maneira abaixo */
+            window.document.querySelector('input#nRes').value = '0'
 
 
-    }
+        }
 
-</script>
+    </script>
 
 </head>
 
@@ -57,15 +99,16 @@
         <input type="number" name="nN2" id="nn2">
     </div>
 
-    
+
     <div id="operadores">
-        <input type="button" value="+" onClick="calc(this)">
-        <input type="button" value="-" onClick="calc(this)">
-        <input type="button" value="*" onClick="calc(this)">
-        <input type="button" value="/" onClick="calc(this)">
-        <input type="button" value="**" onClick="calc(this)">
+        <input type="button" value="+" onClick="calc(this)" class="btn btn-green">
+        <input type="button" value="-" onClick="calc(this)" class="btn btn-green">
+        <input type="button" value="*" onClick="calc(this)" class="btn btn-green">
+        <input type="button" value="/" onClick="calc(this)" class="btn btn-green">
+        <input type="button" value="**" onClick="calc(this)" class="btn btn-green">
+
     </div>
-  
+
     <div id="resultado">
         <input type="button" name="tRes" id="nRes" readonly value="0">
     </div>

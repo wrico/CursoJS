@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Exemplo dos valores inline, block e inline-block
+        da propriedade display;
+    </title>
+
+    <style>
+        .example {
+            color: #FFF;
+            display: flex;
+            justify-content: space-between;
+            
+        }
+
+        .example-item {
+            border-radius: 15em;
+            width: 25%;
+            height: 150px;
+            text-align: center;
+            justify-content: center;
+            font-size: 40px;
+            line-height:150px;   /* Bota o texto centralizado na altura */ 
+        }
+
+        .example-item_first {
+            background-color: #FAA116;
+            
+        }
+
+        .example-item_second {
+            background-color: #57C7C3;
+        }
+
+        .example-item_third {
+            background-color: #3B97D3;
+        }
+    </style>
+
+</head>
+
+<body>
+    <ul class="example">
+        <li class="example-item example-item_first">Primeiro</li>
+        <li class="example-item example-item_second">Segundo</li>
+        <li class="example-item example-item_third">Terceiro</li>
+    </ul>
+
+</body>
+
+</html>
