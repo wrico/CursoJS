@@ -8,24 +8,14 @@
 
         h1 {
             text-align: center;
-        }
-
-        footer {
-            clear: both;
-            border-top: 2px solid #606060;
-            text-align: right;
-            background: #ffab62;
-            width: 100%;
-            height: 30px;
-            position: absolute;
-            bottom: 0;
-            left: 0;
+            line-height: 100px;
         }
 
         div {
             color: yellow;
             font-weight: 700;
             font-size: larger;
+            border-radius: 1em;
         }
 
         div#nHora,
@@ -81,36 +71,33 @@
 
         section {
             background-color: #dddddd;
-            display: flex;
             width: 630px;
             padding: 20px;
-            margin-top: 10px;
+            margin-left: 60px;
+            margin-right: 60px;
             box-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
+            display: flex;
+            justify-content: space-between;  /*  automaticamente centraliza os componentes dando espaço */
         }
 
         section#esq {
-            /* float: left;
-            margin-left: 60px; */
-
-
             float: left;
-            margin-right: 60px;
-            /* centralizando tudo */
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center
         }
 
         section#dir {
             float: right;
-            margin-right: 60px;
-            /* centralizando tudo */
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
+        }
 
+        footer {
+            clear: both;
+            border-top: 2px solid #606060;
+            text-align: right;
+            background: #ffab62;
+            width: 100%;
+            height: 30px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
         }
     </style>
 
