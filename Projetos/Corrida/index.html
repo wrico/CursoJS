@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      float: right;
+    }
+
+    nav a {
+      text-decoration: none;
+      display: block;
+      padding: 15px 25px;
+      text-align: center;
+      background-color: rgb(243, 212, 36);
+      color: #464141;
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    nav a:hover {
+      background-color: #777777;
+      color: #ffffff;
+    }
+
+    h1 {
+      /*color: rgb(3, 3, 80); */
+      font-size: 3vw;
+      font-family: 'Titillium Web', sans-serif;
+    }
+
+    div#info {
+      display: block;
+      text-align: center;
+      margin-top: -50px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    img#logo {
+      max-width: 200px;
+      max-height: 200px;
+      width: auto;
+      height: auto;
+      margin-left: 180px;
+      margin-top: 30px;
+    }
+
+    div#entry {
+      display: flex;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 10px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 style="font-size: 1px; margin: 0px; color: white;">Menu Principal</h1>
+    <img id="logo" src="_imagens/logo.png">
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Calendário de Corridas</a>
+      <a href="#">Alimentação</a>
+      <a href="#">Ferramentas</a>
+      <a href="#">Contato</a>
+    </nav>
+  </header>
+
+  <div id="info">
+
+    <h2 id="inicio">
+      Bem vindo ao gerador automático de planilha de treinos</h2>
+    <h2 id="inicio">Vamos precisar de algumas informações básicas</h2>
+
+  </div>
+
+  <div id="entry">
+    <form id="formulario" autocomplete="on">
+
+      <fieldset>
+        <legend>Primeiro dia da semana</legend>
+        <label>Quilometros que corre na semana: </label><input id="katual" type="number" min="1" max="100"><br><br>
+        <label>Número de vezes por semana: </label><input id="kvezes" type="number" min="1" max="7"><br><br>
+        <label>Informe sua meta de em uma corrida: </label><input id="kmeta" type="number" min="1" max="200"><br><br>
+        <input class="btn_submit" type="button" value="Enviar" onclick="cria_sum()">
+      </fieldset>
+    </form>
+  </div>
+
+  <script>
+    function cria_sum() {
+     
+      if (katual.value <= kmeta.value) {
+        alert("A meta não pode ser menor do que o atual")
+        return
+      }
+    }
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,288 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Finger+Paint|Titillium+Web&display=swap');
+
+@font-face{
+    font-family: 'fontelogo' ;
+    src: url('../_fonts/bubblegum-sans-regular.otf');
+}
+
+body {
+    font-size: 20px;
+    font-weight: 500;
+    background-image: url("c4.jpg"); 
+    background-repeat: no-repeat;
+    background-size: cover; /* Resize the background image to cover the entire container */
+    background-color: #dddddd;
+    /*color: rgb(20, 14, 15);*/
+    line-height: 28px;
+    font-family: Arial, sans-serif;  
+    
+}
+
+h1 {
+    /*color: rgb(3, 3, 80); */
+    font-size:3vw;
+    font-family: 'Titillium Web', sans-serif;
+          
+}
+
+h2 {
+    color:rgb(4, 4, 112);
+    font-size:2vw;
+    font-family: 'Titillium Web', sans-serif;
+}
+    
+h3 {
+    color: rgb(5, 5, 136);
+    font-size:1vw;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+p {
+    text-align: justify;
+    text-indent: 50px;
+    /* color:rgb(19, 19, 138); */
+    margin-top: 20px;
+    margin-bottom: 20px;
+   /* font-size: 2.3vw; */
+   font-size: 15px;
+    font-weight: 500;
+}
+
+div#interface {
+    width: 1000px;
+    background-color: white;
+    margin: -10px auto 10px auto;
+    box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+    padding: 10px 10px 10px 10px; /* pode colocar apenas 1 x q o navegador vai entender */
+}
+
+/* formatação de imagens com legendas */
+
+figure.foto-legenda {
+    position: relative;
+    border: 8px solid white;
+    box-shadow: 1px 1px 4px black;
+    width: auto;
+    height: 280px;
+}
+
+figure.foto-legenda img{
+    width: 100%;
+    height: 100%;
+}
+
+figure.foto-legenda figcaption {
+    position: absolute;
+    top: 0px;
+    /* preta com 0.4 de transparência */
+    background-color: rgba(0,0,0,.4);
+    /* letra branca */
+    color: white;
+    width: 100%;
+    height: 100%;
+    /* Espaçamentos iguais nos quatro lados do elemento. */
+    padding: 10px;
+    /* Margem superior e inferior de 10px. Margem esquerda e direita de 15px.
+padding: 10px 15px; */
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+figure.foto-legenda:hover figcaption {
+    opacity: 1;
+}
+
+/* Formatação do Menu */
+
+nav#menu ul {
+    list-style: none;
+    text-transform: uppercase;
+    position: absolute;
+    top: -20px;
+    left: 400px;
+    font-size: 15px;
+} 
+
+nav#menu li {
+    display: inline-block;
+    background-color: rgba(81, 97, 110, 0.473);
+    padding: 10px;
+    margin: 2px;
+    transition: background-color 1s;
+}
+
+a:visited { text-decoration: none;  color: rgba(144, 190, 247, 0.719); }
+a:link    { text-decoration: none;  color: #00f; }
+a:hover   { text-decoration: underline;  color: rgb(247, 109, 150); } 
+a:active  { text-decoration: none; }
+
+nav#menu li:hover {
+   background-color: #4442c2 ; 
+} 
+
+/*
+nav#menu a {
+    color: #000000; 
+    text-decoration: none;
+}
+
+nav#menu a:hover {
+    color: #ffffff; 
+    text-decoration: underline;
+    color: white;
+}  
+*/
+
+nav#menu h1{
+    display: none;
+
+}
+
+section#corpo {
+    display: block; /* para ser mostrada como um bloco */
+    width: 550px;
+    float: left;
+    border-right: 1px solid #606060 ;
+    padding-right: 20px;
+    }
+
+table#tabelaspec {
+    border: 1px solid #606060;
+    border-spacing: 0px ;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    vertical-align: middle;
+}
+
+table#tabelaspec td {
+    border: 1px solid #606060;
+    padding: 10px;
+}
+
+/* A Class sobrepõe ao que foi definido na tag principal */
+
+table#tabelaspec td.ce{
+    font: white ;
+    background-color: #606060;
+    vertical-align: top;
+    font-weight: bold;
+}
+
+table#tabelaspec td.cd{
+    background-color: #cecece;
+  
+}
+
+table#tabelaspec caption span {
+    display: block;
+    float: right;
+    color: black;
+    font-size: 8pt;
+    margin-top: 10px;
+}
+
+table#tabelaspec caption {
+    color: #888888 ;
+    font-size: 13pt;
+    font-weight: bolder;
+}
+
+aside#lateral {
+    background-color: #dddddd;
+    display: block;
+    width: 400px;
+    float: right;
+    padding: 10px;
+    margin-top: 5px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.5) ;
+}
+
+aside#lateral h1 {   /*outras notícias*/
+    margin-top: 0px;
+    font-family: fontelogo, sans-serif;
+    font-size: 20pt;
+    color: #606060;
+}
+
+aside#lateral h2 {
+    background-color: #606060;
+    font-size: 12 pt;
+    color: #ffffff;
+    padding: 5px ;
+}
+
+footer#rodape {
+    clear: both;
+    border-top: 1px solid #606060;
+    padding-top: -1px;
+    }
+
+   
+header#cabecalho {
+    border-bottom: 1px #606060 solid; 
+    /* dashed, dotted,double, hidden, ridge, solid*/
+    height: 150px;
+    background: url("../_imagens/glass-logo-peq.jpg") no-repeat 0px 80px;
+}
+
+header#cabecalho img#icone {
+    position: absolute;
+    left: 880px;
+    top: 60px;
+}
+header#cabecalho h1{
+    /* font-family: 'fontelogo', Helvetica, sans-serif; */
+    font-family: 'Finger Paint', cursive;
+    font-size: 30px;
+    color: 606060;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.6);
+    padding: 0px;
+    margin-bottom: 0px;
+}
+header#cabecalho h2{
+    font-family: 'Titillium Web', sans-serif;
+    color: #888888;
+    font-size: 15px;
+    padding: 0px;
+    margin-top: 0px;
+}
+
+article#noticia-principal h2 {
+    font-size: 12pt;
+    color: #606060;
+    background-color: #dddddd;
+    padding: 10px 0px 5px 10px;
+    margin: 10px 0px 10px 0px;
+}
+
+header#cabecalho-artigo h1{
+    font-family: 'fontelogo', sans-serif;
+    font-size: 20pt;
+    color: #606060;
+    margin-bottom: 0px;
+    
+}
+header#cabecalho-artigo h2{
+    font-size: 13pt;
+    color: #cecece;
+    background-color: #ffffff;
+    margin: 0px;
+  
+}
+
+header#cabecalho-artigo h3{
+ font-size: 12pt;
+ color: #606060;   
+}
+
+footer#rodape p {
+    text-align: center;
+} 
+
+.direita {
+    text-align: right;
+}
