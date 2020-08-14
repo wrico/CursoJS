@@ -32,9 +32,10 @@
     }
 
     div#info {
+      /* Alinhamento do H1 */
       display: block;
       text-align: center;
-      margin-top: -50px;
+      margin-top: -100px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -48,13 +49,27 @@
       margin-top: 30px;
     }
 
+    form#formulário {
+      width: 200px;
+      display: flex;
+      vertical-align: top;
+      font-size: 0;
+    }
+
     div#entry {
       display: flex;
-      justify-content: center;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 10px;
+      align-items: left;
+    }
 
+    div#res {
+      display: flex;
+      align-items: left;
+    }
+
+    textarea#totalarea,
+    {
+      width: 300px;
+      margin-bottom: 20px;
     }
   </style>
 </head>
@@ -81,24 +96,70 @@
   </div>
 
   <div id="entry">
+
     <form id="formulario" autocomplete="on">
 
       <fieldset>
-        <legend>Primeiro dia da semana</legend>
+        <legend>Parametros</legend>
         <label>Quilometros que corre na semana: </label><input id="katual" type="number" min="1" max="100"><br><br>
         <label>Número de vezes por semana: </label><input id="kvezes" type="number" min="1" max="7"><br><br>
         <label>Informe sua meta de em uma corrida: </label><input id="kmeta" type="number" min="1" max="200"><br><br>
         <input class="btn_submit" type="button" value="Enviar" onclick="cria_sum()">
       </fieldset>
     </form>
+
+    <div id="res">
+
+      <p><label for="totalarea" top> Plano </label><textarea id="totalarea" name="totalarea" cols="35" rows="12"
+          disabled></textarea></p>
+    </div>
+
   </div>
 
   <script>
+
+    let linha = new Array()
+    let cel = new Array()
+
     function cria_sum() {
-     
-      if (katual.value <= kmeta.value) {
+      if (katual.value >= kmeta.value) {
         alert("A meta não pode ser menor do que o atual")
         return
+      }
+
+
+      linha[0] = ["10 minutos de caminhada " + aquece(katual.value) + "10 minutos de caminhada"]
+
+      let kminic = document.getElementById("katual")
+      let kmfim = document.getElementById("kmeta")
+
+      let kmdelta = kmfim - kmini
+      
+      for (i=0; i < kmdelta ; i++) {
+
+      document.querySelector('textarea#totalarea').value = linha[i] + "\n\n"
+
+      }
+
+    }
+
+    function teste(valor) {
+
+      { return 3 * valor + 6 + " ok" }
+    }
+
+    function aquece(inicio) {
+
+      var trote = Number(inicio / 6)
+
+      trote = trote.toFixed(2)
+
+      if (trote < 1) {
+
+        { return "Trote: " + trote * 1000 + " metros" }
+
+      } else {
+        { return "Trote: " + trote + "Km" }
       }
     }
 
