@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -14,11 +14,11 @@
 
             get tabela() {
                 return this.valores.map(valor => {
-                    return { 
-                        numero: this.numero, 
-                        valor: valor, 
-                        resultado: this.numero * valor 
-                        }
+                    return {
+                        numero: this.numero,
+                        valor: valor,
+                        resultado: this.numero * valor
+                    }
                 })
             }
 
@@ -27,14 +27,10 @@
         let x = new tabuada(4, [2, 3, 4])
 
         console.table(x.tabela)
-        
-
 
     </script>
 </head>
 
 <body>
-
-</body>
 
 </html>
