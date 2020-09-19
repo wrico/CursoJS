@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+
+        <div>
+            <p onmouseover="getmsg('SUV','#p1')" onmouseout="limpa('#p1')" id="p1">mensagem principal </p>
+            <p onmouseover="getmsg('CHS','#p2')" onmouseout="limpa('#p2')" id="p2">mensagem CHS </p>
+        </div>
+    </main>
+
+    <script>
+
+        // Versão com Objeto
+
+        function getmsg(type, pr) {
+
+            var carType = type
+            var parag = pr
+
+            var cases = {
+                'SUV': 'Nissan Kicks',
+                'CHS': 'Fiat Punto',
+            }
+
+            var cores = {
+                'SUV': "Preto",
+                'CHS': "Prata"
+            }
+
+            document.querySelector(parag).innerHTML = cases[carType]
+
+        }
+
+        function limpa(ppr) {
+            var pparag = ppr
+            document.querySelector(pparag).innerHTML = "mensagem principal"
+
+        }
+    </script>
+</body>
+
+</html>
