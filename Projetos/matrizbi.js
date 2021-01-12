@@ -1,6 +1,6 @@
 // Matriz Mutidimensional 
 
-let ativ = [ ["Wilson", "Programador","primeiro"], ["Rico","Gerente","segundo"], ["Maldonado","Scrum", "terceiro"] ]
+let ativ = [ ["Wilson", "Programador","primeiro"], ["Rico","Gerente","segundo"], ["Maldonado","Agile Project Manager", "terceiro"] ]
 console.table(ativ)
 console.log(ativ[0][0], ativ[0][1], " e ", ativ[2][1], " Master")
 
