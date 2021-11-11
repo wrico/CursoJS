@@ -50,7 +50,6 @@ for (var i = 0; i < 50; i++) {
 //
 //
 
-
 var numerosAleatorios = [3, 5, 'Ayrton', 10, 2, 19, 21, 13];
 for (var num of numerosAleatorios) {
     console.log('for of', num);
@@ -79,6 +78,18 @@ for (var i = 0; i < 100; i++) {
     } else if (i % 5 === 0) {
         console.log(i, 'PONG');
     }
+}
+
+
+var total = 0
+var numerosAleatorios = [3, 5, 'Wilson', 10, 2, 19, 21, 13];
+for (var num of numerosAleatorios) {
+    console.log('for of', num);
+    if (!isNaN(num)) {
+        total = total + num
+        console.log("Totalizador ->", total)
+    }
+    // se é um numero vai cari aqui
 }
 
 

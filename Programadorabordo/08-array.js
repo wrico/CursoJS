@@ -24,10 +24,10 @@ console.log(numeros.join(' '));
 console.log(numeros.join('->'));
 
 var usuario = [
-  'Ayrton',
-  26,
-  'Programador a Bordo',
-  2019,
+  'Wilson',
+  59,
+  'PM a Bordo',
+  2021,
   'Brasileiro'
 ];
 

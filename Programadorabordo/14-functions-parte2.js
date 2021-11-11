@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Functions parte 2 - Programador a bordo</title>
-</head>
-<body>
-  <script>
+
     // console.log(this)
 
     function Usuario() {
@@ -17,8 +10,9 @@
 
     }
 
-    // Usuario();
-
+  
+  console.log(Usuario())
+/*
     var usuario = new Usuario();
     console.log(usuario)
 
@@ -87,42 +81,4 @@
 
     
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </script>
-</body>
-</html>
+*/

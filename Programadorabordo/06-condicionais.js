@@ -15,15 +15,9 @@
    }
 
    var textoVazio = '';
-   if (!textoVazio) {
-    console.log('textoVazio');
-   }
+   if (!textoVazio) {console.log('textoVazio') }
 
-   if (textoVazio) {
-    console.log('oi');
-   } else {
-    console.log('Olá');
-   }
+   if (textoVazio) {console.log('oi') } else { console.log('Olá')}
 
    if (10 > 20) {
     console.log('10 > 20');

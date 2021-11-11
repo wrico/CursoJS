@@ -1,40 +1,12 @@
-
-
-// Lista o Objeto ligado ao seu IMC
-var imc=0
-
-var usuarios = [
-    {
-        nome: 'Wilson',
-        idade: 59,
-        imc: 0,
-    },
-
-    {
-        nome: 'Fulano',
-        idade: 38,
-        imc: 0 ,
-      
-    },
-
-    {
-        nome: 'Fulana',
-        idade: 22,
-        imc: 0,
-       
+var total = 0
+var numerosAleatorios = [3, 5, 'Wilson', 10, 2, 19, 21, 13];
+for (var num of numerosAleatorios) {
+    console.log('for of', num);
+    if (!isNaN(num)) {
+        total = total + num
+        console.log("Totalizador ->", total)
     }
-
-]
-
-console.log(usuarios[0].nome," ", usuarios[0].idade, " ", imc(usuarios[0]));
-
-
-console.table(usuarios)
-
-
-// Calcula IMC 
-var imc = function(peso, altura=1.83){
-    var vimc=peso/altura**2
-    return vimc
+    // se é um numero vai cari aqui
 }
+
 
