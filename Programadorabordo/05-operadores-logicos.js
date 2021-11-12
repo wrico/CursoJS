@@ -57,7 +57,12 @@ console.log('Programador' && 2050 && 'a Bordo' || 0);
 
 console.log(null || !'' && 'Programador')
 
+// isNaN ?
+var valor = 1.5;
+var teste = "a";
 
+console.log(!isNaN(valor)); /* retorna false negando fica true, 1.5 é tipo numérico */
+console.log(!isNaN(teste)); /* retorna true negando fica falso, "a" não é um número */
 
 
 // Calcula IMC 
