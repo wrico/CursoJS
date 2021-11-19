@@ -1,18 +1,55 @@
 
-    // console.log(this)
+ let a=10
+ var b=20
+
+ this.a = 59
+
+ console.log(this.a)
+ console.log(this.b)
+ console.log(b)
+ console.log(this)
+console.log("//------------------------------")
+
+//------------------------------
+
+
 
     function Usuario() {
-      this.nome = 'Ayrton'
-      this.idade = 27;
-      this.soma = function(a, b) {
-        return a + b;
-      }
+    
+     console.log(" isso é um objeto :")  
 
-    }
+     console.log(this) 
+     
+     /* 
+     this.nome = 'Wilson'
+      this.idade = 59;
+      this.soma = function(a, b) {
+        return a + b; 
+     */
+     }
+
+    Usuario()
+    
+    new Usuario()
+console.log("//----------")
+
+var person = {
+    firstName    : "Penelope",
+    lastName     : "Barrymore",
+    // Já que a palavra-chave "this" é usada dentro do método showFullName() abaixo e este método 
+    // é definido no objeto "person", "this" terá o valor do objeto "person" porque este 
+    // invocará showFullName()​.
+    showFullName : function() {console.log ( this.firstName + ' ' + this.lastName ) }
+}
+
+​person.showFullName() // Penelope Barrymore
+
+
+    /*
+
+    console.log(Usuario())
 
   
-  console.log(Usuario())
-/*
     var usuario = new Usuario();
     console.log(usuario)
 
@@ -20,7 +57,7 @@
     console.log(usuario.idade);
     console.log(usuario.soma(10, 4));
 
-
+  
     // call
     // 
     function Personagem(p1, p2, p3) {
